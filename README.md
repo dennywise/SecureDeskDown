@@ -20,9 +20,9 @@ Both are openable read-write by any user - the `IRP_MJ_CREATE` handler applies n
 
 The drivers exist to inject keyboard and mouse input (G HUB key remapping and macros) through virtual HID devices. Input emitted by a kernel HID device is indistinguishable from real hardware, so it is **not** subject to UIPI/`SendInput` restrictions: it can target higher-integrity windows and the UAC secure desktop. An unprivileged process that can command this driver can therefore synthesize trusted input into elevated contexts - the classic path from Medium integrity to SYSTEM/admin via a consent prompt or an elevated application.
 
-## 3 - What PoC does?
+## 3 - What exploit does?
 
-The full-chain PoC (PoC.py) demonstrates the complete escalation from an unprivileged Medium-integrity process to NT AUTHORITY\SYSTEM in five stages:
+The full-chain exploit (exploit.py) demonstrates the complete escalation from an unprivileged Medium-integrity process to NT AUTHORITY\SYSTEM in five stages:
 
 1- Open the SYSTEM driver: The script calls `CreateFileW` on the `logi_joy_bus_enum` device interface GUID as the current (non-admin) user. No elevation is needed; the handle comes back read-write because the driver’s `IRP_MJ_CREATE` handler enforces no access check.
 
