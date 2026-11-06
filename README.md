@@ -34,3 +34,8 @@ The full-chain exploit (exploit.py) demonstrates the complete escalation from an
 5- Escalate to SYSTEM: The now-elevated `cmd.exe` runs `schtasks /create /ru SYSTEM` to register a one-shot scheduled task running as LocalSystem, then `schtasks /run` to execute it immediately. The result: a SYSTEM-level shell, started from an unprivileged process with no admin credentials entered.
 
 The entire chain, from double-clicking the script to a SYSTEM shell takes under 10 seconds with zero user interaction.
+
+
+
+https://github.com/user-attachments/assets/d8a9b97b-79e9-40cd-8e0c-d2339bae2b7d
+
