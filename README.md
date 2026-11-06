@@ -1,7 +1,6 @@
-# SecureDeskDown
-SecureDeskDown: Unprivileged Keystroke Injection to SYSTEM via G HUB. Local Privilege Escalation via UAC Bypass.
+# SecureDeskDown: Unprivileged Keystroke Injection to SYSTEM via G HUB. Local Privilege Escalation via UAC Bypass.
 
-## Full public disclosure as they see this as 'informative'.
+This is a full public disclosure since they thought this is 'informative'. So this repository exists to inform you :)
 
 A non-elevated local process opens a LocalSystem kernel driver's control device and executes its device-control IOCTLs. The driver's purpose is synthetic keyboard/mouse input, so this is an unauthenticated input-injection primitive available to any user.
 
